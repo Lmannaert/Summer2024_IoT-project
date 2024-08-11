@@ -1,3 +1,4 @@
+#several functions are based on functions provided by the course repository
 import dht
 import time
 import network
