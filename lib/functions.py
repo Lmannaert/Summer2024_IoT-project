@@ -31,31 +31,7 @@ def datacollection():
         return temperature, humidity
     except Exception as error:
         print("Exception occured", error)
-    
 
-def sub_cb(topic, msg):
-    print(f"Received message on topic {topic}: {msg}")
-    try:
-        payload = json.loads(msg)
-        value = payload.get(lib.keys.VARIABLE_LABEL4)
-        context = payload.get("context", {})
-        user = context.get("_action_user", "unknown user")
-        
-        print(f"Action by user: {user}")
-
-        if value == 1:
-            led.on()
-        elif value == 0:
-            led.off()
-    except Exception as e:
-        print(f"Error processing message: {e}")
-
-def connect_mqtt():
-    client = MQTTClient(lib.keys.DEVICE_LABEL, lib.keys.BROKER, user=lib.keys.TOKEN, password=lib.keys.TOKEN, port=1883)
-    client.set_callback(sub_cb)
-    client.connect()
-    client.subscribe("/v1.6/devices/{}/{}".format(lib.keys.DEVICE_LABEL, lib.keys.VARIABLE_LABEL4))
-    return client
 
 
 def tiltSwitch():
