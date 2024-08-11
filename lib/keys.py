@@ -1,0 +1,9 @@
+WIFI_SSID = "TN_24GHz_E20C43"
+WIFI_PASS = "LGKLXNETNG"
+TOKEN = "BBUS-2bJX28xtYixzDT9rEAUBcFqXKhbkkg" #Put here your TOKEN
+DEVICE_LABEL = "picowboard" # Assign the device label desire to be send
+VARIABLE_LABEL1 = "temperature"  # Assign the variable label desire to be send
+VARIABLE_LABEL2 = "humidity"
+VARIABLE_LABEL3 = "light"
+VARIABLE_LABEL4 = "led"
+VARIABLE_LABEL5 = "switch"
